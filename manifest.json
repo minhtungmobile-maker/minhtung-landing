@@ -1,0 +1,15 @@
+﻿{
+  "name": "VMGS-HSTAI 777",
+  "short_name": "VMGS777",
+  "start_url": "/minhtung-landing/",
+  "display": "standalone",
+  "background_color": "#0F0F0F",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1067/1067561.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

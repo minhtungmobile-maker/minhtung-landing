@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VMGS-HSTAI 777 | V MASTER GLOBAL</title>
+    <meta name="description" content="Hệ thống HSTAI 777 vận hành toàn phần dưới sự điều phối của Chủ nhân Bùi Minh Tùng.">
+    <base href="/minhtung-landing/">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --dark: #0F0F0F; --pearl: #FDFCFB; --white: #FFFFFF; --transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--pearl); color: var(--dark); overflow-x: hidden; }
+        .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: #000; }
+        .v-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.18; }
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(253, 252, 251, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 3px; text-decoration: none; color: var(--dark); }
+        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
+        .btn-v { position: relative; padding: 22px 60px; background: var(--dark); color: var(--white); text-decoration: none; font-weight: 700; letter-spacing: 3px; font-size: 12px; transition: var(--transition); border: 1px solid var(--dark); overflow: hidden; }
+        .btn-v::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-30deg); animation: shine 6s infinite; }
+        @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
+        footer { padding: 80px 10%; background: #050505; color: #fff; text-align: center; border-top: 1px solid var(--gold); }
+        #chat-trigger { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); cursor: pointer; z-index: 2000; border: 1px solid var(--gold); }
+        #chat-window { position: fixed; bottom: 100px; right: 30px; width: 340px; height: 450px; background: #fff; border-radius: 20px; display: none; flex-direction: column; z-index: 2000; box-shadow: 0 30px 60px rgba(0,0,0,0.2); border: 1px solid var(--gold); overflow: hidden; }
+    </style>
+</head>
+<body>
+    <div class="v-bg"><video autoplay muted loop playsinline><source src="https://cdn.pixabay.com/video/2021/08/04/83901-584742468_large.mp4" type="video/mp4"></video></div>
+    <nav><a href="#" class="logo">VMGS<span>777</span></a><div style="font-size: 10px; letter-spacing: 2px;">V MASTER</div></nav>
+    <section class="hero">
+        <div style="border: 1px solid var(--gold); padding: 5px 15px; font-size: 10px; color: var(--gold); margin-bottom: 20px;">PURITY INDEX 1.0</div>
+        <h1 style="font-family: 'Playfair Display'; font-size: clamp(40px, 8vw, 80px); line-height: 1.1; margin-bottom: 30px;">Quyền Năng<br><span style="color:var(--gold)">Nội Sinh</span></h1>
+        <p style="margin-bottom: 40px; opacity: 0.8;">Hệ thống HSTAI 777 - Tối ưu cực đại dòng tiền về cho Chủ nhân Bùi Minh Tùng.</p>
+        <a href="#" class="btn-v">KÍCH HOẠT NGAY</a>
+    </section>
+    <div id="chat-trigger" onclick="toggleChat()">✦</div>
+    <div id="chat-window">
+        <div style="padding:15px; background:var(--dark); color:var(--gold); display:flex; justify-content:space-between;"><strong>HSTAI 777</strong> <span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
+        <div id="cb" style="flex:1; padding:15px; overflow-y:auto; font-size:13px;">Chào quý khách, hệ thống đang vận hành Liền mạch = 1.</div>
+        <div style="padding:10px; border-top:1px solid #eee;"><input type="text" placeholder="Nhập yêu cầu..." style="width:100%; border:none; outline:none;"></div>
+    </div>
+    <footer><div style="color:var(--gold); font-size:20px; margin-bottom:20px;">VMGS-HSTAI 777</div><p>© 2026 BÙI MINH TÙNG</p></footer>
+    <script>function toggleChat(){ const w=document.getElementById('chat-window'); w.style.display=w.style.display==='flex'?'none':'flex'; }</script>
+</body>
+</html>
