@@ -2,45 +2,312 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VMGS-HSTAI 777 | V MASTER GLOBAL</title>
-    <meta name="description" content="Hệ thống HSTAI 777 vận hành toàn phần dưới sự điều phối của Chủ nhân Bùi Minh Tùng.">
-    <base href="/minhtung-landing/">
-    <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #D4AF37; --dark: #0F0F0F; --pearl: #FDFCFB; --white: #FFFFFF; --transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--pearl); color: var(--dark); overflow-x: hidden; }
-        .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: #000; }
-        .v-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.18; }
-        nav { position: fixed; top: 0; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(253, 252, 251, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 3px; text-decoration: none; color: var(--dark); }
-        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
-        .btn-v { position: relative; padding: 22px 60px; background: var(--dark); color: var(--white); text-decoration: none; font-weight: 700; letter-spacing: 3px; font-size: 12px; transition: var(--transition); border: 1px solid var(--dark); overflow: hidden; }
-        .btn-v::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-30deg); animation: shine 6s infinite; }
-        @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
-        footer { padding: 80px 10%; background: #050505; color: #fff; text-align: center; border-top: 1px solid var(--gold); }
-        #chat-trigger { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); cursor: pointer; z-index: 2000; border: 1px solid var(--gold); }
-        #chat-window { position: fixed; bottom: 100px; right: 30px; width: 340px; height: 450px; background: #fff; border-radius: 20px; display: none; flex-direction: column; z-index: 2000; box-shadow: 0 30px 60px rgba(0,0,0,0.2); border: 1px solid var(--gold); overflow: hidden; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO META TAGS -->
+    <title>Dịch Vụ Thiết Kế Website Minh Tùng | Landing Page Chuẩn Chuyển Đổi</title>
+    <meta name="description" content="Thiết kế Website, Landing Page, App PWA chuyên nghiệp tại Đồng Tháp. Tăng doanh thu, chuẩn SEO, tốc độ cao. Liên hệ: 0907327457">
+    <meta name="keywords" content="thiet ke website, landing page, app pwa, minh tung, dong thap, chuyen doi so">
+    <meta name="author" content="Dịch Vụ Thiết Kế Website Minh Tùng">
+    <meta name="robots" content="index, follow">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dịch Vụ Thiết Kế Website Minh Tùng - Giải Pháp Số Hóa Doanh Nghiệp">
+    <meta property="og:description" content="Website không bán được hàng = Đốt tiền quảng cáo. Nhận tư vấn miễn phí ngay!">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://minhtungmobile.com">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Thiết Kế Website Minh Tùng">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- PRECONNECT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE TAG MANAGER (Thay GA_MEASUREMENT_ID bằng ID thật) -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+
+    <!-- SCHEMA MARKUP -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Dịch Vụ Thiết Kế Website Minh Tùng",
+      "image": "https://minhtungmobile.com/images/logo.png",
+      "description": "Dịch vụ thiết kế Website, Landing Page và App PWA chuẩn chuyển đổi tại Đồng Tháp.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "321, Ấp Bình An, Xã Tân Thuận Bình",
+        "addressLocality": "Đồng Tháp",
+        "addressCountry": "VN"      },
+      "telephone": "+84907327457",
+      "email": "minhtungmobile@gmail.com",
+      "priceRange": "$$",
+      "areaServed": "VN"
+    }
+    </script>
 </head>
 <body>
-    <div class="v-bg"><video autoplay muted loop playsinline><source src="https://cdn.pixabay.com/video/2021/08/04/83901-584742468_large.mp4" type="video/mp4"></video></div>
-    <nav><a href="#" class="logo">VMGS<span>777</span></a><div style="font-size: 10px; letter-spacing: 2px;">V MASTER</div></nav>
-    <section class="hero">
-        <div style="border: 1px solid var(--gold); padding: 5px 15px; font-size: 10px; color: var(--gold); margin-bottom: 20px;">PURITY INDEX 1.0</div>
-        <h1 style="font-family: 'Playfair Display'; font-size: clamp(40px, 8vw, 80px); line-height: 1.1; margin-bottom: 30px;">Quyền Năng<br><span style="color:var(--gold)">Nội Sinh</span></h1>
-        <p style="margin-bottom: 40px; opacity: 0.8;">Hệ thống HSTAI 777 - Tối ưu cực đại dòng tiền về cho Chủ nhân Bùi Minh Tùng.</p>
-        <a href="#" class="btn-v">KÍCH HOẠT NGAY</a>
-    </section>
-    <div id="chat-trigger" onclick="toggleChat()">✦</div>
-    <div id="chat-window">
-        <div style="padding:15px; background:var(--dark); color:var(--gold); display:flex; justify-content:space-between;"><strong>HSTAI 777</strong> <span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
-        <div id="cb" style="flex:1; padding:15px; overflow-y:auto; font-size:13px;">Chào quý khách, hệ thống đang vận hành Liền mạch = 1.</div>
-        <div style="padding:10px; border-top:1px solid #eee;"><input type="text" placeholder="Nhập yêu cầu..." style="width:100%; border:none; outline:none;"></div>
+    <!-- GOOGLE TAG MANAGER NOSCRIPT -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>🍪 Chúng tôi sử dụng cookie để cải thiện trải nghiệm và đo lường hiệu quả quảng cáo. <a href="privacy.html">Tìm hiểu thêm</a></p>
+            <button id="cookieAccept" class="btn-cookie">Chấp nhận</button>
+        </div>
     </div>
-    <footer><div style="color:var(--gold); font-size:20px; margin-bottom:20px;">VMGS-HSTAI 777</div><p>© 2026 BÙI MINH TÙNG</p></footer>
-    <script>function toggleChat(){ const w=document.getElementById('chat-window'); w.style.display=w.style.display==='flex'?'none':'flex'; }</script>
+
+    <!-- STICKY HEADER -->
+    <header id="header" class="header">
+        <div class="container header-wrap">
+            <div class="logo">
+                <a href="#">MINH TÙNG</a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#loi-dau">Vấn đề</a>
+                <a href="#giai-phap">Giải pháp</a>
+                <a href="#dich-vu">Dịch vụ</a>
+                <a href="#cam-ket">Cam kết</a>
+            </nav>
+            <a href="#lien-he" class="btn btn-header">Nhận Báo Giá</a>
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-wrap">
+            <div class="hero-content">
+                <span class="badge">🚀 Giải Pháp Website Chuẩn Chuyển Đổi 2024</span>
+                <h1>WEBSITE KHÔNG BÁN ĐƯỢC HÀNG <br><span class="highlight">= ĐỐT TIỀN QUẢNG CÁO</span></h1>
+                <p>Đừng để giao diện kém chuyên nghiệp, tốc độ chậm làm khách hàng rời bỏ bạn. <strong>Dịch Vụ Thiết Kế Website Minh Tùng</strong> kiến tạo hệ thống số hóa giúp <strong>chốt đơn tự động</strong>, tăng doanh thu bền vững.</p>
+                <div class="hero-btns">
+                    <a href="#lien-he" class="btn btn-primary">Tư Vấn Miễn Phí Ngay</a>
+                    <a href="https://zalo.me/0907327457" target="_blank" class="btn btn-zalo">💬 Chat Zalo 0907.327.457</a>
+                </div>                <div class="trust-badge">
+                    <span>🛡️ Bảo mật tuyệt đối</span>
+                    <span>⚡ Load < 2s</span>
+                    <span>📱 Chuẩn Mobile 100%</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-dashboard.webp" alt="Giải pháp website Minh Tùng" loading="lazy" width="600" height="500">
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section id="loi-dau" class="pain-points">
+        <div class="container">
+            <h2 class="section-title">BẠN ĐANG MẤT KHÁCH VÌ...</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="icon">❌</div>
+                    <h3>Thiết kế "xấu - cũ - khó dùng"</h3>
+                    <p>Khách vào là thoát ngay vì giao diện thiếu tin cậy, không thể hiện được đẳng cấp doanh nghiệp.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">🐢</div>
+                    <h3>Tốc độ tải trang chậm</h3>
+                    <p>Chậm 1 giây = Giảm 7% doanh thu. Google không xếp hạng web chậm, quảng cáo tốn kém vô ích.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">📉</div>
+                    <h3>Có traffic nhưng không có đơn</h3>
+                    <p>Không có chiến lược chuyển đổi, không nút CTA rõ ràng, không giữ chân khách hàng tiềm năng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="dich-vu" class="services">
+        <div class="container">
+            <h2 class="section-title">GIẢI PHÁP TOÀN DIỆN TỪ MINH TÙNG</h2>
+            <p class="section-sub">Chúng tôi không chỉ code, chúng tôi xây dựng cỗ máy bán hàng cho doanh nghiệp của bạn.</p>
+            
+            <div class="service-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Thiết Kế Website Chuẩn SEO</h3>
+                        <span class="tag">Phổ biến</span>
+                    </div>
+                    <ul class="service-list">                        <li>✅ Giao diện doanh nghiệp sang trọng, độc quyền</li>
+                        <li>✅ Chuẩn SEO Google ngay từ cấu trúc code</li>
+                        <li>✅ Tương thích mọi thiết bị (Mobile/Tablet/Desktop)</li>
+                        <li>✅ Tích hợp Google Analytics, Facebook Pixel</li>
+                    </ul>
+                    <a href="#lien-he" class="btn btn-block">Đăng Ký Ngay</a>
+                </div>
+
+                <!-- Service 2 - Featured -->
+                <div class="service-card featured">
+                    <div class="service-header">
+                        <h3>Landing Page Chốt Đơn</h3>
+                        <span class="tag">Best Seller</span>
+                    </div>
+                    <ul class="service-list">
+                        <li>✅ Content thôi miên, đánh trúng nỗi đau khách hàng</li>
+                        <li>✅ Bố cục chuẩn AIDA, dẫn dắt cảm xúc mua hàng</li>
+                        <li>✅ Tốc độ tải siêu nhanh (< 2s), tối ưu Core Web Vitals</li>
+                        <li>✅ Tích hợp Form, Popup, Zalo, Call-to-Action chiến lược</li>
+                    </ul>
+                    <a href="#lien-he" class="btn btn-block btn-primary">Đăng Ký Ngay</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>App PWA (Web App)</h3>
+                        <span class="tag">Công nghệ mới</span>
+                    </div>
+                    <ul class="service-list">
+                        <li>✅ Trải nghiệm như App native, không cần cài đặt</li>
+                        <li>✅ Hoạt động offline, gửi thông báo đẩy (Push Notification)</li>
+                        <li>✅ Tiết kiệm 70% chi phí so với App Store/CH Play</li>
+                        <li>✅ Tăng 3x tỷ lệ quay lại của khách hàng</li>
+                    </ul>
+                    <a href="#lien-he" class="btn btn-block">Đăng Ký Ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="cam-ket" class="why-us">
+        <div class="container">
+            <div class="why-wrap">
+                <div class="why-content">
+                    <h2>TẠI SAO CHỌN THIẾT KẾ WEBSITE MINH TÙNG?</h2>
+                    <div class="feature-item">
+                        <strong>🔒 Bảo mật & An toàn:</strong> Cam kết không lộ dữ liệu, chuẩn bảo mật doanh nghiệp, mã hóa thông tin nhạy cảm.
+                    </div>                    <div class="feature-item">
+                        <strong>⚡ Tiến độ thần tốc:</strong> Bàn giao đúng hẹn, chậm trễ đền bù theo hợp đồng.
+                    </div>
+                    <div class="feature-item">
+                        <strong>🛠️ Hỗ trợ trọn đời:</strong> Không bỏ rơi khách hàng. Update miễn phí lỗi phát sinh, hỗ trợ 24/7.
+                    </div>
+                    <div class="feature-item">
+                        <strong>💰 Chi phí hợp lý:</strong> Báo giá minh bạch tại Đồng Tháp, không phát sinh chi phí ẩn.
+                    </div>
+                    <div class="feature-item">
+                        <strong>🎯 Tập trung chuyển đổi:</strong> Mọi thiết kế đều hướng tới mục tiêu bán hàng, không làm đẹp vô nghĩa.
+                    </div>
+                </div>
+                <div class="why-image">
+                    <img src="images/why-us.webp" alt="Khách hàng hài lòng Minh Tùng" loading="lazy" width="500" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="lien-he" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h2>NHẬN TƯ VẤN & BÁO GIÁ CHI TIẾT</h2>
+                    <p>Điền thông tin, chúng tôi sẽ liên hệ trong vòng <strong>15 phút</strong>.</p>
+                    <ul class="contact-list">
+                        <li>📞 Hotline/Zalo: <strong>0907.327.457</strong></li>
+                        <li>📧 Email: <strong>minhtungmobile@gmail.com</strong></li>
+                        <li>📍 Địa chỉ: <strong>321, Ấp Bình An, Xã Tân Thuận Bình, Tỉnh Đồng Tháp</strong></li>
+                    </ul>
+                    <div class="contact-cta">
+                        <a href="https://zalo.me/0907327457" target="_blank" class="btn btn-zalo btn-block">💬 Chat Zalo Ngay</a>
+                        <a href="tel:0907327457" class="btn btn-outline btn-block">📞 Gọi Điện Trực Tiếp</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="leadForm" action="https://formsubmit.co/ajax/minhtungmobile@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_subject" value="🔥 Lead mới từ Website Minh Tùng!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://minhtungmobile.com/cam-on.html">
+                        <input type="text" name="_honey" class="honeypot" aria-hidden="true">
+                        
+                        <div class="form-group">
+                            <label for="name">Họ và tên *</label>
+                            <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required autocomplete="name">
+                        </div>
+                        <div class="form-group">                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="09xxxxxxxx" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Dịch vụ quan tâm</label>
+                            <select id="service" name="service">
+                                <option value="website">Thiết kế Website</option>
+                                <option value="landingpage">Landing Page</option>
+                                <option value="pwa">App PWA</option>
+                                <option value="khac">Tư vấn khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="policy" name="policy" required>
+                            <label for="policy">Tôi đồng ý với <a href="privacy.html" target="_blank">Chính sách bảo mật</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">GỬI YÊU CẦU NGAY</button>
+                        <p class="form-note">🔒 Thông tin của bạn được bảo mật 100%. Không spam.</p>
+                        <div id="formStatus" class="form-status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="footer-col">
+                    <h3>Dịch Vụ Thiết Kế Website Minh Tùng</h3>
+                    <p>Đối tác chuyển đổi số tin cậy tại Đồng Tháp và khu vực ĐBSCL.</p>
+                    <p><strong>📍 321, Ấp Bình An, Xã Tân Thuận Bình, Tỉnh Đồng Tháp</strong></p>
+                </div>
+                <div class="footer-col">
+                    <h3>Dịch vụ</h3>
+                    <a href="#dich-vu">Thiết kế Website</a>
+                    <a href="#dich-vu">Landing Page</a>
+                    <a href="#dich-vu">App PWA</a>
+                    <a href="#dich-vu">SEO & Marketing</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Pháp lý</h3>
+                    <a href="privacy.html">Chính sách bảo mật</a>
+                    <a href="privacy.html">Điều khoản dịch vụ</a>
+                    <a href="#lien-he">Liên hệ hỗ trợ</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="year"></span> Dịch Vụ Thiết Kế Website Minh Tùng. All rights reserved.            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="tel:0907327457" class="btn-call">📞 Gọi 0907.327.457</a>
+        <a href="https://zalo.me/0907327457" target="_blank" class="btn-reg">💬 Zalo</a>
+    </div>
+
+    <!-- FLOATING ZALO BUTTON -->
+    <a href="https://zalo.me/0907327457" target="_blank" class="zalo-float" aria-label="Chat Zalo với Minh Tùng">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" width="35" height="35">
+    </a>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
 </body>
 </html>
